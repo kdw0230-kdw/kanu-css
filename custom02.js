@@ -1,0 +1,22 @@
+$(document).ready(function(){
+  if(!window.location.hostname.startsWith('kanu')){
+    document.documentElement.style.display='none';
+    return;
+  }
+  if($('.video-container').length>0||$('.video-wrapper').length>0||$('.video-section').length>0){
+  $('html').css('display','none');
+    return;
+  }
+  if(window.location.pathname==='/'||window.location.pathname==='/index.html'){
+    var vds=document.getElementById('vds');
+    if(vds){
+      vds.src='https://vod.plaync.com/LineageW/Introduction/3_6_Giran.mp4';
+      document.getElementById('vd').load();
+    }
+  }
+  var vdsBack=document.getElementById('vdsBack');
+    if(vdsBack){
+      vdsBack.src='https://cdn.jsdelivr.net/gh/kdw0230-kdw/kanu-css@main/kanu_main_bg.mp4';
+      document.getElementById('vdBack').load();
+    }
+});
